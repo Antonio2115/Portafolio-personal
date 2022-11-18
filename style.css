@@ -1,0 +1,227 @@
+:root{
+  --black: #000000;
+  --white: #ffff;
+  --soft-black: #131417;
+  --soft-transparent-black: #00000081;
+  --soft-blue: #2d64fc;
+  --soft-transparent-blue: #2d64fc69;
+  --sm: 1.6rem;
+  --md: 2.4rem;
+  --md2: 3.4rem;
+  --lg: 4.5rem;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/*-----------------------------Estilos de navbar--------------------------------- */
+nav{
+  background-color: var(--black);
+  color: var(--white);
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  top: 0;
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+}
+
+nav .nav-contanier{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.nav-contanier #links{
+  display: flex;
+}
+
+.nav-contanier #links li{
+  list-style: none;
+}
+
+.nav-contanier #links li a{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  font-size: var(--sm);
+  text-align: center;
+  border: 2px solid var(--black);
+  border-radius: 4px;
+  transition: .3s;
+  text-decoration: none;
+  color: var(--white);
+}
+.nav-contanier #links li a:hover{
+  border: 2px solid var(--soft-blue);
+  -webkit-box-shadow: 0px 0px 48px 0px var(--soft-blue);
+  -moz-box-shadow: 0px 0px 48px 0px var(--soft-blue);
+  box-shadow: 0px 0px 48px 0px var(--soft-blue);
+}
+
+.nav-contanier #links li a:active{
+  border: 2px solid var(--soft-blue);
+  background-color: var(--soft-blue);
+}
+
+.nav-contanier #links li a{
+  border-radius: 6px;
+}
+
+nav .social-media{
+  display: flex;
+  
+}
+
+nav .social-media a{
+  color: var(--white);
+}
+
+nav .social-media i{
+  padding: 8px;
+  font-size: var(--md);
+  cursor: pointer;
+  transition: .3s;
+}
+
+nav .social-media i:hover{
+  color: var(--soft-blue);
+}
+/*-----------------------Estilos de inicio------------------------------ */
+
+#begin {
+  background: linear-gradient(var(--soft-transparent-black) , var(--soft-transparent-blue)),url("https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#begin .begin-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#begin .begin-container p,
+#begin .begin-container h2{
+  text-align: center;
+  font-size: var(--lg);
+  color: var(--white);
+}
+#begin .begin-container .welcome-text{
+  font-size: var(--sm);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+#begin .begin-container .beginBotton{
+  display: flex;
+  justify-content: center;
+}
+
+#begin .begin-container .beginBotton #jobPortfolio{
+  text-decoration: none;
+  display: inline-block;
+  margin: 25px;
+  padding: 20px 25px;
+  border: 2px solid var(--white);
+  border-radius: 50px;
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: .3s;
+  font-size: var(--sm);
+}
+
+#begin .begin-container .beginBotton #jobPortfolio:hover{
+  border: 2px solid var(--soft-blue);
+  -webkit-box-shadow: 0px 0px 48px 0px var(--soft-blue);
+  -moz-box-shadow: 0px 0px 48px 0px var(--soft-blue);
+  box-shadow: 0px 0px 48px 0px var(--soft-blue);
+}
+
+/*-----------------------Estilos de sobre mi------------------------------ */
+#aboutMe{
+  padding: 60px 15px;
+  color: var(--black);
+  display: flex;
+}
+
+#aboutMe .aboutMeContainer{
+  max-width: 750px;
+  margin: 0 auto;
+}
+.sectionTitle{
+  padding-bottom: 20px;
+  font-size: var(--md2);
+  text-decoration: underline;
+  text-decoration-color: var(--soft-transparent-blue);
+  text-decoration-thickness: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.description{
+  font-size: var(--sm);
+  text-align: justify;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.primaryButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+.primaryButton{
+  text-decoration: none;
+  display: inline-block;
+  margin: 25px;
+  padding: 20px 25px;
+  border: 2px solid var(--black);
+  border-radius: 50px;
+  color: var(--black);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: .3s;
+  font-size: var(--sm);
+}
+
+.primaryButton:hover{
+  color: var(--white);
+  background-color: var(--soft-blue);
+}
+
+/*-----------------------Estilos de proyectos------------------------------ */
+#portfolioOfJob{
+  background-color: var(--soft-black);
+  color: var(--white);
+  padding: 60px 15px;
+}
+
+/*-----------------------media query------------------------------ */
+#pageDetails{
+  background-color: var(--soft-black);
+  color: var(--white);
+  padding: 60px 15px;
+}
+#updateDate{
+  
+}
