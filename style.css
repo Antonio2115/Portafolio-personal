@@ -1,6 +1,7 @@
 :root{
   --black: #000000;
   --white: #ffff;
+  --gray: #929292 ;
   --soft-black: #131417;
   --soft-transparent-black: #00000081;
   --soft-blue: #2d64fc;
@@ -35,7 +36,7 @@ nav{
   display: flex;
 }
 
-nav .nav-contanier{
+nav .navContanier{
   margin: auto;
   display: flex;
   align-items: center;
@@ -43,15 +44,15 @@ nav .nav-contanier{
   width: 100vw;
 }
 
-.nav-contanier #links{
+.links{
   display: flex;
 }
 
-.nav-contanier #links li{
+.navContanier .links li{
   list-style: none;
 }
 
-.nav-contanier #links li a{
+.navContanier .links li a{
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -64,39 +65,45 @@ nav .nav-contanier{
   text-decoration: none;
   color: var(--white);
 }
-.nav-contanier #links li a:hover{
+.navContanier .links li a:hover{
   border: 2px solid var(--soft-blue);
   -webkit-box-shadow: 0px 0px 48px 0px var(--soft-blue);
   -moz-box-shadow: 0px 0px 48px 0px var(--soft-blue);
   box-shadow: 0px 0px 48px 0px var(--soft-blue);
 }
 
-.nav-contanier #links li a:active{
+.navContanier .links li a:active{
   border: 2px solid var(--soft-blue);
   background-color: var(--soft-blue);
 }
 
-.nav-contanier #links li a{
+.navContanier .links li a{
   border-radius: 6px;
+}
+
+nav .menu{
+  display: none;
 }
 
 nav .social-media{
   display: flex;
-  
 }
 
-nav .social-media a{
+nav .social-media a,
+nav .menu a{
   color: var(--white);
 }
 
-nav .social-media i{
+nav .social-media i,
+nav .menu i{
   padding: 8px;
   font-size: var(--md);
   cursor: pointer;
   transition: .3s;
 }
 
-nav .social-media i:hover{
+nav .social-media i:hover,
+nav .menu i:hover{
   color: var(--soft-blue);
 }
 /*-----------------------Estilos de inicio------------------------------ */
@@ -184,6 +191,7 @@ nav .social-media i:hover{
   text-align: justify;
   font-weight: 200;
   margin-bottom: 20px;
+  line-height: 28px;
 }
 
 .primaryButtonContainer {
@@ -213,15 +221,89 @@ nav .social-media i:hover{
 #portfolioOfJob{
   background-color: var(--soft-black);
   color: var(--white);
-  padding: 60px 15px;
+  padding: 60px 30px;
+}
+
+#portfolioOfJob .projectsContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  gap: 26px;
+  place-content: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+#portfolioOfJob .projectsContainer .project {
+  max-width: 218px;
+  max-height: 218px;
+  border: 1px solid var(--black);
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#portfolioOfJob .projectsContainer .project img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+  object-fit: cover;
+  transition: .5s;
+}
+
+#portfolioOfJob .projectsContainer .project:hover img {
+  filter: grayscale(0);
+}
+
+#portfolioOfJob .projectsContainer .project .descriptionProjectContainer {
+  position: absolute;
+  left: 0px;
+  background-color: var(--soft-transparent-black);
+  color: var(--white);
+  width: 100%;
+  padding: 10px;
+  opacity: 0;
+  bottom: -40px;
+  transition: .5s;
+  font-size: var(--md);
+}
+#portfolioOfJob .projectsContainer .project:hover .descriptionProjectContainer{
+  opacity: 1;
+  bottom: 0;
+}
+#portfolioOfJob .projectsContainer .project:active .descriptionProjectContainer {
+  background-color: var(--soft-transparent-blue);
+}
+/*-----------------------Estilos de footer------------------------------ */
+#pageDetails{
+  background-color: var(--black);
+  color: var(--gray);
+  padding: 30px 15px 15px 30px;
 }
 
 /*-----------------------media query------------------------------ */
-#pageDetails{
-  background-color: var(--soft-black);
-  color: var(--white);
-  padding: 60px 15px;
-}
-#updateDate{
+
+
+@media (max-width: 395px){
+  .navContanier .links{
+    position: absolute;
+    background-color: var(--black);
+    top: 60px;
+    width: 150px;
+  }
+  nav .menu{
+    display: block;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .disable {
+    display: none;
+  }
+  .projectsContainer{
+    grid-template-columns: repeat(auto-fill, 140px);
+  }
   
 }

@@ -14,18 +14,19 @@
 <body>
   <!--------------------------------------Navbar-------------------------------------->
   <nav>
-    <div class="nav-contanier">
-      <div id="links">
-        <li><a href="#begin">INICIO</a></li>
-        <li><a href="#aboutMe">SOBRE MI</a></li>
-        <li><a href="#portfolioOfJob">PROYECTOS</a></li>
+    <div class="navContanier">
+      <!-- Icono del navbar responsivo -->
+      <div class="menu" onclick="responsiveMenuMobile()">
+          <i class="fa-solid fa-bars"></i>
       </div>
+
+      <ul class="links disable">
+        <li><a href="#begin" onclick="closedResponsiveMenuMobile()">INICIO</a></li>
+        <li><a href="#aboutMe" onclick="closedResponsiveMenuMobile()">SOBRE MI</a></li>
+        <li><a href="#portfolioOfJob" onclick="closedResponsiveMenuMobile()">PROYECTOS</a></li>
+      </ul>
       
       <div class="social-media">
-        <!-- Icono del navbar responsivo -->
-        <div>
-          <i class="fa-solid fa-bars"></i>
-        </div>
         <!-- Icono de redes -->
         <a href="https://www.linkedin.com/in/jose-antonio-viveros-andrade-a3b106217/">
           <i class="fa-brands fa-linkedin"></i>
@@ -33,12 +34,10 @@
         <a href="https://github.com/Antonio2115">
           <i class="fa-brands fa-github"></i>
         </a>
-        
       </div>
       
 
     </div>
-    
   </nav>
   <!--------------------------------------Inicio--------------------------------------->
   <section id="begin">
@@ -56,15 +55,11 @@
   <!-------------------------------------Sobre mi-------------------------------------->
   <section id="aboutMe">
     <div class="aboutMeContainer">
-      <p class="sectionTitle">SOBRE MI</p>
+      <h3 class="sectionTitle">SOBRE MI</h3>
       <p class="sectionSubtitle"></p>
       <div class="descriptionContainer">
         <p class="description">
-          Ingeniero en Mecatrónica con motivación e interés en desempeñar mis conocimientos adquiridos durante mi carrera. Además de seguir aprendiendo cosas nuevas para poder resolver diferentes situaciones que se me puedan presentar y demostrar mis habilidades y cualidades para cumplir mis metas.
-        </p>
-        <br/>
-        <p class="description">
-          Me encuentro actualmente en busqueda de empleo
+          Hola y bienvenido, me presento soy ingeniero en mecatrónica, egresado del Instituto Tecnológico Superior de Xalapa (ITSX). me describo como una persona motivada e interesada en la programación y automatización, hice esta página para darme a conocer ya que me encuentro en la búsqueda de mi primer empleo. Puedo asegurar que tengo un gran compromiso con desempeñar mis conocimientos y seguir aprendiendo cosas nuevas, para poder resolver cualquier problemática que se pueda presentar y demostrar mis habilidades para cumplir las expectativas y metas que se tengan en mí.
         </p>
       </div>
       <div class="primaryButtonContainer">
@@ -75,12 +70,41 @@
 
   <!-------------------------------------Proyectos------------------------------------->
   <section id="portfolioOfJob">
-    <p class="sectionTitle">PROYECTOS</p>
+    <h3 class="sectionTitle">PROYECTOS</h3>
+    <div class="projectsContainer">
+    </div>
   </section>
+
   <!-------------------------------------footer-------------------------------------->
   <footer id="pageDetails">
-    <p id="updateDate">xx de noviembre del 2022</p>
-    <p id="email">joseantoniova159@gmail.com</p>
+    <p id="updateDate" class="description">Fecha de creacion: xx de noviembre del 2022</p>
+    <p id="email" class="description">Email: joseantoniova159@gmail.com</p>
   </footer>
+    <!-------------------------------------Template de proyectos------------------------------------->
+  <template id="templateProjects">
+      <div class="project">
+        <img src="" alt="">
+        <div class="descriptionProjectContainer">
+          <h4 class="projectTitle"></h4>
+          <p class="category"></p>
+        </div>
+      </div>
+  </template>
+  <!-------------------------------------Template detalles de proyectos------------------------------------->
+
+  <template id="templateDetailsProjects">
+    <section class="detailsProjectContainer">
+      <h3 class="sectionTitle"></h3>
+      <div class="descriptionProjectContainer">
+        <p class="description"></p>
+        <a href="">Documentación</a>
+      </div>
+      <div class="GalleryContainer">
+      </div>
+    </section>
+  </template>
+
+  <script src="./projects.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
