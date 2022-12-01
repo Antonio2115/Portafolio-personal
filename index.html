@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="#" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
-  <title>Portafolio J.A.V.A.</title>
+  <title>Porftafolio Jose Antonio</title>
 </head>
 <body>
   <!--------------------------------------Navbar-------------------------------------->
@@ -39,6 +40,33 @@
 
     </div>
   </nav>
+
+<!--------------------------------Detalles de proyecto--------------------------------->
+  <aside id="projectDetail" class="disable">
+    <div class="closeContainer">
+      <i class="fa-solid fa-xmark closed"></i>
+    </div>
+    <div class="projectDetailsContainer">
+      <h3 class="sectionTitle" id="detailProjectTitle"></h3>
+      <div class="descriptionProjectContainer">
+        <p class="description" id="detailProjectDescription"></p>
+        <div>
+          <p class="sectionSubtitle">Herramientas ocupadas:</p>
+          <ul class="usedToolsContainerInProjectdetails">
+          </ul>
+        </div>
+        <div class="primaryButtonContainer">
+          <a href="" class="primaryButton" id="DocumentationLink">Descargar Documentación</a>
+        </div>
+      </div>
+      <!-- <p class="sectionSubtitle">Imagenes del Proyecto</p>
+      <div class="GalleryContainer">
+        <div class="imgProjectContainer">
+          <img src="https://drive.google.com/uc?export=view&id=1gAop6Wdt_6l0q-ztQ_c3H2L0pfBEjfjT" alt="">
+        </div>-->
+      
+    </div>
+  </aside>
   <!--------------------------------------Inicio--------------------------------------->
   <section id="begin">
     <div class="begin-container">
@@ -73,14 +101,19 @@
     <h3 class="sectionTitle">PROYECTOS</h3>
     <div class="projectsContainer">
     </div>
-  </section>
 
-  <!-------------------------------------footer-------------------------------------->
+  </section>
+  
+  <!-------------------------------------footer----------------------------------------->
   <footer id="pageDetails">
-    <p id="updateDate" class="description">Fecha de creacion: xx de noviembre del 2022</p>
+    <p id="updateDate" class="description">Fecha de creacion: 1 de diciembre del 2022</p>
     <p id="email" class="description">Email: joseantoniova159@gmail.com</p>
   </footer>
-    <!-------------------------------------Template de proyectos------------------------------------->
+
+  <!--------------------------------Fondo de menu--------------------------------->
+  <div class="menuBackground disable"></div>
+
+  <!------------------------------Template de proyectos--------------------------------->
   <template id="templateProjects">
       <div class="project">
         <img src="" alt="">
@@ -90,19 +123,36 @@
         </div>
       </div>
   </template>
-  <!-------------------------------------Template detalles de proyectos------------------------------------->
+  <!-------------------------Template detalles de proyectos------------------------------>
 
   <template id="templateDetailsProjects">
-    <section class="detailsProjectContainer">
+    <div class="closeContainer">
+      <i class="fa-solid fa-xmark closed"></i>
+    </div>
+    <div class="detailsProjectContainer">
       <h3 class="sectionTitle"></h3>
       <div class="descriptionProjectContainer">
         <p class="description"></p>
-        <a href="">Documentación</a>
+        <div>
+          <p class="sectionSubtitle">Herramientas ocupadas:</p>
+          <ul class="toolsContainer">
+            <li class="list"></li>
+          </ul>
+        </div>
+        <div class="primaryButtonContainer">
+          <a href="" class="primaryButton linkDocumentation">Descargar Documentación</a>
+        </div>
       </div>
+      <p class="sectionSubtitle">Imagenes del Proyecto</p>
       <div class="GalleryContainer">
+        <div class="imgProjectContainer">
+          <img src="" alt="">
+        </div>
       </div>
-    </section>
+      
+    </div>
   </template>
+  
 
   <script src="./projects.js"></script>
   <script src="./main.js"></script>

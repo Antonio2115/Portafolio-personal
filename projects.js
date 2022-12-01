@@ -9,13 +9,13 @@ const projects =[
         "https://drive.google.com/uc?export=view&id=1L4l33_eo1yVmr37P_gZNP9mcg9inBwKO",
         "https://drive.google.com/uc?export=view&id=160iwtgeh2fxTjSKHyWVrqeckcu5SkJkC"
     ],
-    description: "Button mashing es un juego realizado a partir de visual basic.net y Arduino. El juego consiste en una competición entre dos jugadores que tienen como objetivo sumar 5 puntos. La manera de conseguir estos puntos, consiste en presionar su botón cuando el juego de una advertencia antes que su adversario. En caso de presionar el botón antes o cuando no se esta la advertencia se le resta 1 punto.",
+    description: "Button mashing es un juego realizado a partir de Visual Basic.net y Arduino. El juego consiste en una competición entre dos jugadores que tienen como objetivo sumar 5 puntos. La manera de conseguir estos puntos, consiste en presionar su botón cuando el juego de una advertencia antes que su adversario. En caso de presionar el botón antes o cuando no esta la advertencia se le resta 1 punto.",
     toolsUsed: [
         "Arduino",
         "Visual Basic",
         "Electronica"
     ],
-    documentation: "",
+    documentation: "https://drive.google.com/file/d/1l42erKeorZyIpfe6OZGlR6IoId8i39j0/view?usp=sharing",
   },
   //Proyecto makecube
   {
@@ -29,7 +29,7 @@ const projects =[
       "AutoCAD",
       "Sketch Up"
    ],
-    documentation:""
+    documentation:"https://drive.google.com/file/d/1bfHKZaqej7noppzG57xmqK-HHvXtqWA4/view?usp=sharing"
   },
   //Proyecto separador de primeras aguas automatizado
   {
@@ -45,10 +45,11 @@ const projects =[
       "Arduino",
       "Electronica"
     ],
-    documentation:""
+    documentation:"https://drive.google.com/file/d/1hLiKRU3Yg_dsho0ydTn-ZKhYnp7_S0O8/view?usp=sharing"
   }
 ];
 
+// Platilla de atributos de projectos
 // {
 //   name:"",
 //   category:"",
