@@ -297,7 +297,7 @@ nav .menu i:hover{
   position: fixed;
   z-index: 4;
   margin: 30px;
-  overflow-y:scroll;
+  overflow-y:auto;
   height: 90vh;
 }
 #projectDetail .projectDetailsContainer{
