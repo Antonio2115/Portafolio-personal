@@ -1,6 +1,7 @@
 //Funcion de despliegue de navbar mobile
 let links = document.querySelector('.links');
 let menuNavBackGround = document.querySelector('.menuBackground');
+let projectDetailMenuBackground = document.querySelector('.projectDetailMenuBackground');
 
 if(menuNavBackGround.classList.contains('disable')){
   menuNavBackGround.addEventListener('click',responsiveMenuMobile);
@@ -57,6 +58,7 @@ function projectDetail(project){
   let closedContainer = document.querySelector('.closeContainer');
   //Apareción de aside
   projectDetailContainer.classList.toggle('disable');
+  projectDetailMenuBackground.classList.remove('disable');
   
   //Cambio de datos de ventana de detalles de proyectos
   sectionTitle.innerText = project.name;
@@ -84,7 +86,7 @@ function projectDetail(project){
 
   function closedProjectDetail() {
     projectDetailContainer.classList.add('disable');
-
+    projectDetailMenuBackground.classList.add('disable');
     //Limpieza de componentes
     project.toolsUsed.map(() => {
       let toolsList = document.querySelector('.list');
