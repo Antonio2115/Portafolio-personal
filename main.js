@@ -69,7 +69,6 @@ function projectDetail(project){
     toolList.classList.add('list');
     toolList.innerText = tool;
     toolsContainer.appendChild(toolList);
-    console.log(tool);
   });
 
   //Integrar Disable
@@ -83,28 +82,21 @@ function projectDetail(project){
   
   //Cerrado de ventana de detalles del proyecto
   closedContainer.addEventListener('click',closedProjectDetail);
+  projectDetailMenuBackground.addEventListener('click',closedProjectDetail);
 
   function closedProjectDetail() {
     projectDetailContainer.classList.add('disable');
     projectDetailMenuBackground.classList.add('disable');
+    
     //Limpieza de componentes
     project.toolsUsed.map(() => {
       let toolsList = document.querySelector('.list');
-      toolsList.remove();
+      if(toolsList){
+        toolsList.remove();
+      }
     });
   }
-
-}
-//Funcion de despligue de detalles 
-
-//Construccion de template
-
-let projectbox = document.querySelector('.project');
-
-projectbox.addEventListener('click',detailProjectTest);
-function detailProjectTest(){
-
 }
 
-//Cada vez que se redimensiona la pafina se cierra la ventana del nav
+//Cada vez que se redimensiona la pagina se cierra la ventana del navbar
 window.onresize = closedResponsiveMenuMobile; 

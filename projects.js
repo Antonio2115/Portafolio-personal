@@ -12,8 +12,8 @@ const projects =[
     description: "Button mashing es un juego realizado a partir de Visual Basic.net y Arduino. El juego consiste en una competición entre dos jugadores que tienen como objetivo sumar 5 puntos. La manera de conseguir estos puntos, consiste en presionar su botón cuando el juego de una advertencia antes que su adversario. En caso de presionar el botón antes o cuando no esta la advertencia se le resta 1 punto.",
     toolsUsed: [
         "Arduino",
-        "Visual Basic",
-        "Electronica"
+        "Visual Basic.NET",
+        "Electronica básica"
     ],
     documentation: "https://drive.google.com/file/d/1l42erKeorZyIpfe6OZGlR6IoId8i39j0/view?usp=sharing",
   },
@@ -27,6 +27,7 @@ const projects =[
     description:"MAKECUBE es una empresa ficticia que se realizo como proyecto para analizar los diferentes factores de seguridad y ergonomía para mantener la integridad de trabajadores y clientes. Para la realización de estos análisis se realizo diferentes cálculos de ergonomía y se recreo los entornos de trabajo a partir de los softwares AutoCAD y SketchUp.",
     toolsUsed: [
       "AutoCAD",
+      "SOLIDWORKS",
       "Sketch Up"
    ],
     documentation:"https://drive.google.com/file/d/1bfHKZaqej7noppzG57xmqK-HHvXtqWA4/view?usp=sharing"
@@ -43,7 +44,7 @@ const projects =[
       "Express PCB",
       "Express SCH",
       "Arduino",
-      "Electronica"
+      "Electronica básica"
     ],
     documentation:"https://drive.google.com/file/d/1hLiKRU3Yg_dsho0ydTn-ZKhYnp7_S0O8/view?usp=sharing"
   }
