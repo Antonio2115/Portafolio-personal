@@ -1,2 +1,2 @@
 # Portafolio-personal
-En la presente pagina se presenta los proyectos y actividades que he realizado a lo largo de mi periodo de estudio como Ingeniero en Mecatrónica.
+En esta página encontrarás una recopilación de los proyectos y actividades que he llevado a cabo durante mi período de estudio como Ingeniero en Mecatrónica, así como después de completar mi formación. El propósito de compartir esta información es aprovechar las oportunidades laborales que puedan surgir.
