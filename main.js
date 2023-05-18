@@ -22,13 +22,10 @@ function closedResponsiveMenuMobile(){
   }
   menuNavBackGround.classList.add('disable');
 }
+//<-------------------------------Lista de funcionamiento-------------------------->
 
-//Generación de etiquetas de proyectos
-let projectsContainer = document.querySelector('.projectsContainer');
-projects.forEach(ArrayProject => {
-  renderProjects(ArrayProject);
-});
-
+//Cada vez que se redimensiona la pagina se cierra la ventana del navbar
+window.onresize = closedResponsiveMenuMobile; 
 
 function renderProjects(project){
   let templateProjectsSelector = document.querySelector('#templateProjects');
@@ -48,22 +45,27 @@ function renderProjects(project){
 }
 
 //Despliegue de detalles de proyecto
-
 function projectDetail(project){
-  let projectDetailContainer = document.querySelector('#projectDetail');
+  let projectDetail = document.querySelector('#projectDetail');
   let sectionTitle = document.querySelector('#detailProjectTitle');
   let descriptionProject = document.querySelector('#detailProjectDescription');
   let documentationLink = document.querySelector('#DocumentationLink');
   let toolsContainer = document.querySelector('.usedToolsContainerInProjectdetails');
   let closedContainer = document.querySelector('.closeContainer');
+  let projectDetailsContainer = document.querySelector('.projectDetailsContainer');
+
+
   //Apareción de aside
-  projectDetailContainer.classList.toggle('disable');
+  projectDetail.classList.toggle('disable');
+  projectDetail.classList.add('active');
   projectDetailMenuBackground.classList.remove('disable');
+
   
   //Cambio de datos de ventana de detalles de proyectos
   sectionTitle.innerText = project.name;
   descriptionProject.innerText = project.description;
 
+  //Mapeo de lista de actividades hechas
   project.toolsUsed.map(tool => {
     let toolList = document.createElement('li');
     toolList.classList.add('list');
@@ -81,13 +83,26 @@ function projectDetail(project){
   
   
   //Cerrado de ventana de detalles del proyecto
-  closedContainer.addEventListener('click',closedProjectDetail);
-  projectDetailMenuBackground.addEventListener('click',closedProjectDetail);
+  closedContainer.addEventListener('click',closeForX);
+  projectDetailMenuBackground.addEventListener('click',closeForBackground);
+  projectDetailsContainer.addEventListener('click',clickProjectDetailContainer);
+
+  function closeForBackground(){
+    closedProjectDetail();
+  }
+  function closeForX(event){
+    event.stopPropagation();
+    closedProjectDetail()
+  }
+  function clickProjectDetailContainer(event){
+    event.stopPropagation();
+  }
+  
 
   function closedProjectDetail() {
-    projectDetailContainer.classList.add('disable');
+    projectDetail.classList.add('disable');
+    projectDetail.classList.remove('active');
     projectDetailMenuBackground.classList.add('disable');
-    
     //Limpieza de componentes
     project.toolsUsed.map(() => {
       let toolsList = document.querySelector('.list');
@@ -98,5 +113,8 @@ function projectDetail(project){
   }
 }
 
-//Cada vez que se redimensiona la pagina se cierra la ventana del navbar
-window.onresize = closedResponsiveMenuMobile; 
+//Generación de etiquetas de proyectos
+let projectsContainer = document.querySelector('.projectsContainer');
+projects.forEach(ArrayProject => {
+  renderProjects(ArrayProject);
+});
