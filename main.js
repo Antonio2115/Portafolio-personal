@@ -35,7 +35,7 @@ function renderProjects(project){
   let categoryProject = templateProjects.querySelector('.category');
   let projectContainer = templateProjects.querySelector('.project');
 
-  projectContainer.addEventListener('click', function(){projectDetail(project)});
+  projectContainer.addEventListener('click', function(){projectDetail(project);});
 
   imgProject.setAttribute('src',project.images[0]);
   projectTitle.innerText = project.name;
@@ -46,6 +46,7 @@ function renderProjects(project){
 
 //Despliegue de detalles de proyecto
 function projectDetail(project){
+  //Selección de cada parte de los detalles de proyecto
   let projectDetail = document.querySelector('#projectDetail');
   let sectionTitle = document.querySelector('#detailProjectTitle');
   let descriptionProject = document.querySelector('#detailProjectDescription');
@@ -53,13 +54,16 @@ function projectDetail(project){
   let toolsContainer = document.querySelector('.usedToolsContainerInProjectdetails');
   let closedContainer = document.querySelector('.closeContainer');
   let projectDetailsContainer = document.querySelector('.projectDetailsContainer');
-
+  let galleryContainer = document.querySelector('#GalleryProjectContainer')
+  let Body = document.body;
 
   //Apareción de aside
   projectDetail.classList.toggle('disable');
   projectDetail.classList.add('active');
   projectDetailMenuBackground.classList.remove('disable');
 
+  //Ocutar de scroll de la pagina principal
+  Body.style.overflow = 'hidden';
   
   //Cambio de datos de ventana de detalles de proyectos
   sectionTitle.innerText = project.name;
@@ -73,13 +77,37 @@ function projectDetail(project){
     toolsContainer.appendChild(toolList);
   });
 
-  //Integrar Disable
+  //Mapeo de imagenes para la lista
+  project.images.map(image =>{
+    let imageCreater = document.createElement('img');
+    imageCreater.classList.add('imageOfGallery');
+    imageCreater.setAttribute('src',image);
+    galleryContainer.appendChild(imageCreater);
+
+    //Evento de zoom en cada imagen dentro de la galeria
+    imageCreater.addEventListener('click', () => {
+      // Muestra el overlay y la imagen ampliada
+      const zoomOverlay = document.getElementById('zoom-overlay');
+      const zoomImage = document.getElementById('zoomed-image');
+      zoomOverlay.style.display = 'flex';
+      zoomImage.setAttribute('src', imageCreater.src);
+    });
+  });
+
+ 
+
+
+  //Vadilacion de botones del proyecto
+  //Validacion de documentacion de proyecto
   if(project.documentation === ''){
     documentationLink.classList.remove('primaryButton');
   }else{
     documentationLink.classList.add('primaryButton');
     documentationLink.setAttribute('href',project.documentation)
   }
+  //Validacion de web del proyecto
+  //Validacion de Repositorio del proyecto
+
   
   
   //Cerrado de ventana de detalles del proyecto
@@ -100,15 +128,26 @@ function projectDetail(project){
   
 
   function closedProjectDetail() {
+    //Ocultar la ventana de detalles del proyecto
     projectDetail.classList.add('disable');
     projectDetail.classList.remove('active');
     projectDetailMenuBackground.classList.add('disable');
-    //Limpieza de componentes
+    //Aparecion de scroll de la pagina principal
+    Body.style.overflow = 'auto';
+
+    //Limpieza de lista de habilidades
     project.toolsUsed.map(() => {
       let toolsList = document.querySelector('.list');
       if(toolsList){
         toolsList.remove();
       }
+    });
+    //Limpieza de imagenes de la galeria
+    project.images.map(()=>{
+       let imageOfGallery = document.querySelector('.imageOfGallery');
+       if(imageOfGallery){
+        imageOfGallery.remove();
+       }
     });
   }
 }
@@ -117,4 +156,36 @@ function projectDetail(project){
 let projectsContainer = document.querySelector('.projectsContainer');
 projects.forEach(ArrayProject => {
   renderProjects(ArrayProject);
+
+});
+
+//------------------------------------Prueba-----------------------------------------------------------------
+// Obtén todas las imágenes de la galería
+const images = document.querySelectorAll('#GalleryProjectContainer img');
+
+// Agrega un evento de escucha a cada imagen
+images.forEach(image => {
+  zoomInTheImage(image);
+});
+
+function zoomInTheImage(image) {
+  image.addEventListener('click', () => {
+    // Muestra el overlay y la imagen ampliada
+    const zoomOverlay = document.getElementById('zoom-overlay');
+    const zoomImage = document.getElementById('zoomed-image');
+    zoomOverlay.style.display = 'flex';
+    zoomImage.setAttribute('src', image.src);
+  });
+}
+
+// Agrega un evento de escucha para ocultar el overlay al hacer clic en él
+const zoomOverlay = document.getElementById('zoom-overlay');
+zoomOverlay.addEventListener('click', () => {
+  zoomOverlay.style.display = 'none';
+});
+
+// Evita que se cierre la imagen ampliada al hacer clic en ella
+const zoomImage = document.getElementById('zoomed-image');
+zoomImage.addEventListener('click', (event) => {
+  event.stopPropagation();
 });
