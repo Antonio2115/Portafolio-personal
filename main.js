@@ -6,14 +6,14 @@ let projectDetailMenuBackground = document.querySelector('.projectDetailMenuBack
 if(menuNavBackGround.classList.contains('disable')){
   menuNavBackGround.addEventListener('click',responsiveMenuMobile);
 }
-
+//Control del Hamburger Menu en pantalla de celular
 function responsiveMenuMobile(){
   links.classList.toggle('disable');
   links.classList.toggle('active');
 
   menuNavBackGround.classList.toggle('disable');
 }
-
+//Función para en caso de que redimensiona la pagina se cierra la ventana del navbar
 function closedResponsiveMenuMobile(){
   const IsOpenMenuMobile = links.classList.contains('active');
   if(IsOpenMenuMobile){
@@ -22,11 +22,12 @@ function closedResponsiveMenuMobile(){
   }
   menuNavBackGround.classList.add('disable');
 }
-//<-------------------------------Lista de funcionamiento-------------------------->
+//<---------------------------------Funciones de ventana de detalles del proyecto-------------------------->
 
-//Cada vez que se redimensiona la pagina se cierra la ventana del navbar
+//Cada vez que se redimensiona la página, se cierra la ventana del navbar
 window.onresize = closedResponsiveMenuMobile; 
 
+//Renderizado de proyectos en la sección de proyectos
 function renderProjects(project){
   let templateProjectsSelector = document.querySelector('#templateProjects');
   let templateProjects = templateProjectsSelector.content.cloneNode(true);
@@ -39,7 +40,7 @@ function renderProjects(project){
 
   imgProject.setAttribute('src',project.images[0]);
   projectTitle.innerText = project.name;
-  categoryProject.innerText = project.category;
+  categoryProject.innerText = project.categoryPrimary;
   //Agregacion de cada proyecto
   projectsContainer.appendChild(templateProjects);
 }
@@ -110,7 +111,7 @@ function projectDetail(project){
 
   
   
-  //Cerrado de ventana de detalles del proyecto
+  //<--------------------------Cerrado de ventana de detalles del proyecto----------------------------->
   closedContainer.addEventListener('click',closeForX);
   projectDetailMenuBackground.addEventListener('click',closeForBackground);
   projectDetailsContainer.addEventListener('click',clickProjectDetailContainer);
@@ -156,10 +157,9 @@ function projectDetail(project){
 let projectsContainer = document.querySelector('.projectsContainer');
 projects.forEach(ArrayProject => {
   renderProjects(ArrayProject);
-
 });
 
-//------------------------------------Prueba-----------------------------------------------------------------
+//<-----------Funciones para el control de la galeria dentro de la ventana de detalles del proyecto--------->
 // Obtén todas las imágenes de la galería
 const images = document.querySelectorAll('#GalleryProjectContainer img');
 
@@ -167,7 +167,7 @@ const images = document.querySelectorAll('#GalleryProjectContainer img');
 images.forEach(image => {
   zoomInTheImage(image);
 });
-
+//Función para realizar zoom a las imagenes dentro de la ventana de detalles del proyecto 
 function zoomInTheImage(image) {
   image.addEventListener('click', () => {
     // Muestra el overlay y la imagen ampliada
@@ -189,3 +189,118 @@ const zoomImage = document.getElementById('zoomed-image');
 zoomImage.addEventListener('click', (event) => {
   event.stopPropagation();
 });
+
+//<----------------------Funciones de botones de categoria-------------------------------->
+//Seleccionamiento
+let categoryButtons = document.querySelectorAll('.categoryButton');
+
+let activeCategoryButtons = [];
+
+categoryButtons.forEach(button =>{
+  button.addEventListener('click',projectClassification);
+});
+
+function projectClassification(event){
+  //Identificación de botones de categoria activos
+  const clickedButton = event.target;
+  const index = activeCategoryButtons.indexOf(clickedButton);
+  if (index === -1) {
+    activeCategoryButtons.push(clickedButton);
+  } else {
+    activeCategoryButtons.splice(index, 1);
+  }
+  clickedButton.classList.toggle('activePrimaryButton');
+
+  
+
+  //Extraccion de proyectos clasificados
+  let activeButtonIds = activeCategoryButtons.map(button => button.id);
+  console.log(activeButtonIds);//<------------------Mostrar variable--------------->
+
+  //Control de botnes de categorias 
+  if(activeButtonIds.includes('allProjects')){
+    const allProjectsButton = document.querySelector('#allProjects');
+    console.log("Poner boton todos");//<------------------Mostrar variable--------------->
+    //Limpieza de array de categorias 
+    activeButtonIds = activeButtonIds.filter(function(item) {
+      return item === "allProjects";
+    });
+    console.log(activeButtonIds);//<------------------Mostrar variable--------------->
+    //Reseteo de estilos
+    activeCategoryButtons.map(item =>{
+      if(item.classList.contains('activePrimaryButton')){
+        item.classList.remove('activePrimaryButton');
+        console.log("Borrado de estilo");//<------------------Mostrar variable--------------->
+      }
+    });
+    if(!allProjectsButton.classList.contains('activePrimaryButton')){
+      allProjectsButton.classList.add('activePrimaryButton');
+    }
+    console.log(activeCategoryButtons);//<------------------Mostrar variable--------------->
+  }
+
+  else{
+    const allProjectsButton = document.querySelector('#allProjects');
+    allProjectsButton.classList.remove('activePrimaryButton');
+    console.log("Quita boton Todos");//<------------------Mostrar variable--------------->
+  }
+
+  // Filtrar proyectos
+  const filteredProjects = projects.filter(projects => {
+  // Verificar si al menos uno de los IDs de botones activos está en la lista 'categories' del proyecto
+  return activeButtonIds.some(id => projects.categories.includes(id));
+  });
+  console.log(filteredProjects);//<------------------Mostrar variable--------------->
+
+  //Limpieza de proyectos
+  cleanProjects();
+
+  //Limpieza de texto de sin proyectos
+  cleanTextWithoutProjects();
+
+  //Renderizado de proyectos
+  if(filteredProjects != ""){
+    console.log("Hay cosas en el filtrado");//<------------------Mostrar variable--------------->
+    //Redenrizado de proyectos de acuerdo de a las categorias seleccionadas
+    filteredProjects.forEach(ArrayProject => {
+      renderProjects(ArrayProject);
+    });
+  }
+  else if (activeButtonIds.includes('allProjects')){
+    //Reinicio de la variable
+    activeCategoryButtons = [];
+
+    console.log("Dibuja todo");//<------------------Mostrar variable--------------->
+
+    //Renderizado de todos los proyectos
+    projects.forEach(ArrayProject => {
+      renderProjects(ArrayProject);
+    });
+  }
+  else{
+    console.log("No dibuja nada");//<------------------Mostrar variable--------------->
+
+    //Dibujado y creacion de texto de proyectos no encontrados
+    const projectsContainer = document.querySelector('.projectsContainer');
+    const withoutProjects = document.createElement('h2');
+    withoutProjects.classList.add('bigDescriptioninBlackBackground');
+    withoutProjects.innerText = 'Lo siento, No hay proyectos de esta categoria(s).'
+    projectsContainer.appendChild(withoutProjects);
+  }
+  console.log("<----------------------------------------------------------------------------------->");//<------------------Mostrar variable--------------->
+}
+
+function  cleanProjects(){
+  let porjectBoxes = document.querySelectorAll('.project');
+  porjectBoxes.forEach(box => {
+    box.remove();
+  });
+}
+
+function cleanTextWithoutProjects(){
+  let TextWithoutProjects = document.querySelector('.bigDescriptioninBlackBackground');
+  console.log(TextWithoutProjects);//<------------------Mostrar variable--------------->
+  if(TextWithoutProjects){
+    TextWithoutProjects.remove();
+  }
+}

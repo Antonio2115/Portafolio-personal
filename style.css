@@ -49,6 +49,22 @@ html{
   display: none;
 }
 
+/*-----------------------------Estilos Generales--------------------------------- */
+.bigDescriptioninBlackBackground{
+  color: var(--white);
+  padding-bottom: 20px;
+  font-size: var(--md2);
+  font-weight: bold;
+  text-align: center;
+}
+.bigDescriptioninWhiteBackground{
+  color: var(--black);
+  padding-bottom: 20px;
+  font-size: var(--md2);
+  font-weight: bold;
+  text-align: center;
+}
+
 /*-----------------------------Estilos de navbar--------------------------------- */
 nav{
   background-color: var(--black);
@@ -229,7 +245,7 @@ nav .menu i:hover{
 .primaryButton{
   text-decoration: none;
   display: inline-block;
-  margin: 25px;
+  margin: 5px;
   padding: 20px 25px;
   border: 2px solid var(--black);
   border-radius: 50px;
@@ -239,18 +255,31 @@ nav .menu i:hover{
   transition: .3s;
   font-size: var(--sm);
   text-align: center;
+  cursor: pointer;
 }
 
 .primaryButton:hover{
   color: var(--white);
   background-color: var(--soft-blue);
 }
+.activePrimaryButton{
+  color: var(--white);
+  background-color: var(--soft-blue);
+  border: 2px solid var(--soft-blue);
+  -webkit-box-shadow: 0px 0px 48px 0px var(--soft-blue);
+  -moz-box-shadow: 0px 0px 48px 0px var(--soft-blue);
+  box-shadow: 0px 0px 48px 0px var(--soft-blue);
+}
 
 /*-----------------------Estilos de proyectos------------------------------ */
 #portfolioOfJob{
   background-color: var(--soft-black);
   color: var(--white);
-  padding: 60px 30px;
+  padding: 60px 30px 20px ;
+}
+
+#portfolioOfJob .categoryButtonContainer{
+  margin-bottom: 45px;
 }
 
 #portfolioOfJob .projectsContainer{
@@ -315,7 +344,7 @@ nav .menu i:hover{
   cursor: default;
   padding: 20px;
   max-width: 600px;
-  max-height: 600px;
+  max-height: 90vh;
   position: relative;
   background-color: var(--white);
   overflow-y: auto;
@@ -452,3 +481,6 @@ nav .menu i:hover{
   }
 }
 
+@media (max-height: 580){
+
+}
