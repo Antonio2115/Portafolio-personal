@@ -291,8 +291,8 @@ nav .menu i:hover{
 }
 
 #portfolioOfJob .projectsContainer .project {
-  max-width: 218px;
-  max-height: 218px;
+  width: 218px;
+  height: 218px;
   border: 1px solid var(--black);
   margin: 20px;
   position: relative;
