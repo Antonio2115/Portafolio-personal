@@ -45,13 +45,16 @@ function renderProjects(project){
   projectsContainer.appendChild(templateProjects);
 }
 
-//Despliegue de detalles de proyecto
+//<-------------------------------------Despliegue de detalles de proyecto----------------------------------->
 function projectDetail(project){
   //Selección de cada parte de los detalles de proyecto
   let projectDetail = document.querySelector('#projectDetail');
   let sectionTitle = document.querySelector('#detailProjectTitle');
   let descriptionProject = document.querySelector('#detailProjectDescription');
-  let documentationLink = document.querySelector('#DocumentationLink');
+  let documentationLink = document.querySelector('#documentationLink');
+  let downloadProject = document.querySelector('#downloadProject');
+  let previewProject = document.querySelector('#previewProject');
+  let repositoryLink = document.querySelector('#repositoryLink');
   let toolsContainer = document.querySelector('.usedToolsContainerInProjectdetails');
   let closedContainer = document.querySelector('.closeContainer');
   let projectDetailsContainer = document.querySelector('.projectDetailsContainer');
@@ -98,19 +101,44 @@ function projectDetail(project){
  
 
 
-  //Vadilacion de botones del proyecto
+  //<---------------------------------Vadilacion de botones del proyecto------------------------------>
   //Validacion de documentacion de proyecto
   if(project.documentation === ''){
     documentationLink.classList.remove('primaryButton');
+    documentationLink.classList.add('disable');
   }else{
     documentationLink.classList.add('primaryButton');
+    documentationLink.classList.remove('disable');
     documentationLink.setAttribute('href',project.documentation)
   }
   //Validacion de web del proyecto
+  if(project.PreviewOnline === ''){
+    previewProject.classList.remove('primaryButton');
+    previewProject.classList.add('disable');
+  }else{
+    previewProject.classList.add('primaryButton');
+    previewProject.classList.remove('disable');
+    previewProject.setAttribute('href',project.PreviewOnline)
+  }
   //Validacion de Repositorio del proyecto
+  if(project.RepositoryInGitHub === ''){
+    repositoryLink.classList.remove('primaryIcon');
+    repositoryLink.classList.add('disable');
+  }else{
+    repositoryLink.classList.add('primaryIcon');
+    repositoryLink.classList.remove('disable');
+    repositoryLink.setAttribute('href',project.RepositoryInGitHub)
+  }
+  //Validacion de decarga  de proyecto
+  if(project.downloadProject === ''){
+    downloadProject.classList.remove('primaryButton');
+    downloadProject.classList.add('disable');
+  }else{
+    downloadProject.classList.add('primaryButton');
+    downloadProject.classList.remove('disable');
+    downloadProject.setAttribute('href',project.downloadProject)
+  }
 
-  
-  
   //<--------------------------Cerrado de ventana de detalles del proyecto----------------------------->
   closedContainer.addEventListener('click',closeForX);
   projectDetailMenuBackground.addEventListener('click',closeForBackground);
@@ -215,34 +243,31 @@ function projectClassification(event){
 
   //Extraccion de proyectos clasificados
   let activeButtonIds = activeCategoryButtons.map(button => button.id);
-  console.log(activeButtonIds);//<------------------Mostrar variable--------------->
 
-  //Control de botnes de categorias 
-  if(activeButtonIds.includes('allProjects')){
+  //Control de botones de categorias 
+  if(activeButtonIds.includes('allProjects') || activeButtonIds == ''){
     const allProjectsButton = document.querySelector('#allProjects');
-    console.log("Poner boton todos");//<------------------Mostrar variable--------------->
     //Limpieza de array de categorias 
     activeButtonIds = activeButtonIds.filter(function(item) {
       return item === "allProjects";
     });
-    console.log(activeButtonIds);//<------------------Mostrar variable--------------->
+    if(activeButtonIds == ''){
+      activeButtonIds.push('allProjects');
+    }
     //Reseteo de estilos
     activeCategoryButtons.map(item =>{
       if(item.classList.contains('activePrimaryButton')){
         item.classList.remove('activePrimaryButton');
-        console.log("Borrado de estilo");//<------------------Mostrar variable--------------->
       }
     });
     if(!allProjectsButton.classList.contains('activePrimaryButton')){
-      allProjectsButton.classList.add('activePrimaryButton');
+      allProjectsButton.classList.add('activePrimaryButton'); 
     }
-    console.log(activeCategoryButtons);//<------------------Mostrar variable--------------->
   }
 
   else{
     const allProjectsButton = document.querySelector('#allProjects');
     allProjectsButton.classList.remove('activePrimaryButton');
-    console.log("Quita boton Todos");//<------------------Mostrar variable--------------->
   }
 
   // Filtrar proyectos
@@ -250,7 +275,6 @@ function projectClassification(event){
   // Verificar si al menos uno de los IDs de botones activos está en la lista 'categories' del proyecto
   return activeButtonIds.some(id => projects.categories.includes(id));
   });
-  console.log(filteredProjects);//<------------------Mostrar variable--------------->
 
   //Limpieza de proyectos
   cleanProjects();
@@ -260,7 +284,6 @@ function projectClassification(event){
 
   //Renderizado de proyectos
   if(filteredProjects != ""){
-    console.log("Hay cosas en el filtrado");//<------------------Mostrar variable--------------->
     //Redenrizado de proyectos de acuerdo de a las categorias seleccionadas
     filteredProjects.forEach(ArrayProject => {
       renderProjects(ArrayProject);
@@ -269,17 +292,12 @@ function projectClassification(event){
   else if (activeButtonIds.includes('allProjects')){
     //Reinicio de la variable
     activeCategoryButtons = [];
-
-    console.log("Dibuja todo");//<------------------Mostrar variable--------------->
-
     //Renderizado de todos los proyectos
     projects.forEach(ArrayProject => {
       renderProjects(ArrayProject);
     });
   }
   else{
-    console.log("No dibuja nada");//<------------------Mostrar variable--------------->
-
     //Dibujado y creacion de texto de proyectos no encontrados
     const projectsContainer = document.querySelector('.projectsContainer');
     const withoutProjects = document.createElement('h2');
@@ -287,7 +305,6 @@ function projectClassification(event){
     withoutProjects.innerText = 'Lo siento, No hay proyectos de esta categoria(s).'
     projectsContainer.appendChild(withoutProjects);
   }
-  console.log("<----------------------------------------------------------------------------------->");//<------------------Mostrar variable--------------->
 }
 
 function  cleanProjects(){
@@ -299,7 +316,6 @@ function  cleanProjects(){
 
 function cleanTextWithoutProjects(){
   let TextWithoutProjects = document.querySelector('.bigDescriptioninBlackBackground');
-  console.log(TextWithoutProjects);//<------------------Mostrar variable--------------->
   if(TextWithoutProjects){
     TextWithoutProjects.remove();
   }

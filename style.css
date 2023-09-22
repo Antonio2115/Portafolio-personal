@@ -12,6 +12,7 @@
   --md: 2.4rem;
   --md2: 3.4rem;
   --lg: 4.5rem;
+  --xl: 8.5rem;
 }
 
 *{
@@ -47,6 +48,23 @@ html{
 
 .disable {
   display: none;
+}
+
+.primaryIcon{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  font-size: var(--xl);
+  text-align: center;
+  border: 2px solid var(--transparent);
+  border-radius: 4px;
+  transition: .3s;
+  text-decoration: none;
+  color: var(--black);
+}
+.primaryIcon:hover{
+  color: var(--soft-blue);
 }
 
 /*-----------------------------Estilos Generales--------------------------------- */
@@ -240,6 +258,7 @@ nav .menu i:hover{
 
 .primaryButtonContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .primaryButton{

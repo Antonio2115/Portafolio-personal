@@ -137,7 +137,7 @@ const projects =[
     name:"Diseños CAD",
     categoryPrimary:"Diseño CAD en SolidWorks",
     categories:[
-        "desing3D",
+      "design3D"
     ],
     images: [
     //Brazo robotico
