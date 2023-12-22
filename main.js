@@ -102,7 +102,7 @@ function projectDetail(project){
 
 
   //<---------------------------------Vadilacion de botones del proyecto------------------------------>
-  //Validacion de documentacion de proyecto
+  //Validacion de documentación de proyecto
   if(project.documentation === ''){
     documentationLink.classList.remove('primaryButton');
     documentationLink.classList.add('disable');
@@ -111,7 +111,7 @@ function projectDetail(project){
     documentationLink.classList.remove('disable');
     documentationLink.setAttribute('href',project.documentation)
   }
-  //Validacion de web del proyecto
+  //Validacion de visualización web del proyecto
   if(project.PreviewOnline === ''){
     previewProject.classList.remove('primaryButton');
     previewProject.classList.add('disable');
@@ -273,7 +273,7 @@ function projectClassification(event){
   // Filtrar proyectos
   const filteredProjects = projects.filter(projects => {
   // Verificar si al menos uno de los IDs de botones activos está en la lista 'categories' del proyecto
-  return activeButtonIds.some(id => projects.categories.includes(id));
+  return activeButtonIds.every(id => projects.categories.includes(id));
   });
 
   //Limpieza de proyectos
@@ -302,7 +302,7 @@ function projectClassification(event){
     const projectsContainer = document.querySelector('.projectsContainer');
     const withoutProjects = document.createElement('h2');
     withoutProjects.classList.add('bigDescriptioninBlackBackground');
-    withoutProjects.innerText = 'Lo siento, No hay proyectos de esta categoria(s).'
+    withoutProjects.innerText = 'Lo siento, No hay proyectos que contenga esta(s) categoria(s).'
     projectsContainer.appendChild(withoutProjects);
   }
 }

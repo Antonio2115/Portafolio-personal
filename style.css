@@ -1,5 +1,6 @@
 :root{
   --transparent:#00000000;
+  --transparent-black: #0000004f;
   --black: #000000;
   --white: #ffff;
   --gray: #929292 ;
@@ -7,7 +8,8 @@
   --soft-transparent-black: #00000081;
   --soft-blue: #2d64fc;
   --soft-transparent-blue: #2d64fc69;
-  --soft-gray: #cfcfcf ;
+  --soft-gray: #cfcfcf;
+  --soft-transparent-gray: #cfcfcf3b ;
   --sm: 1.6rem;
   --md: 2.4rem;
   --md2: 3.4rem;
@@ -170,7 +172,7 @@ nav .menu i:hover{
 /*-----------------------Estilos de inicio------------------------------ */
 
 #begin {
-  background: linear-gradient(var(--soft-transparent-black) , var(--soft-transparent-blue)),url("https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg");
+  background: linear-gradient(var(--soft-transparent-blue),var(--transparent)) ,url("https://drive.google.com/uc?export=view&id=10GElfMNg69KyPZx9lGB0GTedsNff2LBu");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
