@@ -7,11 +7,17 @@ const projects =[
       "programation",
       "electronic"
     ],
-    images: [
+    imagesOnline: [
         "https://drive.google.com/uc?export=view&id=1gAop6Wdt_6l0q-ztQ_c3H2L0pfBEjfjT",
         "https://drive.google.com/uc?export=view&id=1EA-Jx9Sn1LicixPRyejmb_GWfb8--H19",
         "https://drive.google.com/uc?export=view&id=1L4l33_eo1yVmr37P_gZNP9mcg9inBwKO",
         "https://drive.google.com/uc?export=view&id=160iwtgeh2fxTjSKHyWVrqeckcu5SkJkC"
+    ],
+    imagesOffline: [
+      "./assets/Button-Mashing/Button-mashing-1.jpg",
+      "./assets/Button-Mashing/Button-mashing-2.jpg",
+      "./assets/Button-Mashing/Button-mashing-3.jpg",
+      "./assets/Button-Mashing/Button-mashing-4.jpg"
     ],
     description: "Button mashing es un juego realizado a partir de Visual Basic.net y Arduino. El juego consiste en una competición entre dos jugadores que tienen como objetivo sumar 5 puntos. La manera de conseguir estos puntos, consiste en presionar su botón cuando el juego de una advertencia antes que su adversario. En caso de presionar el botón antes o cuando no está la advertencia se le resta 1 punto.",
     toolsUsed: [
@@ -20,10 +26,11 @@ const projects =[
         "Electronica"
     ],
     documentation: "https://drive.google.com/file/d/1l42erKeorZyIpfe6OZGlR6IoId8i39j0/view?usp=sharing",
-    PreviewOnline: "",
+    PreviewOnline: "https://youtu.be/lyDGr7L5880",
     RepositoryInGitHub: "",
     downloadProject:""
   },
+  
   //Proyecto makecube
   {
     name:"MAKECUBE",
@@ -31,12 +38,19 @@ const projects =[
     categories: [
       "design3D"
     ],
-    images: [
+    imagesOnline: [
       "https://drive.google.com/uc?export=view&id=1Jt9GQCSC4-cd3JB6ZxSqe_KayuP-ihBG",
       "https://drive.google.com/uc?export=view&id=1ihkBWfobYOK_Q-_pTGLpIY0yBr-Rs3j3",
       "https://drive.google.com/uc?export=view&id=1ZCIieT9s7eGUj5sOyHSj9K-HWRuswnzR",
       "https://drive.google.com/uc?export=view&id=1ZKXouKML6dEJeo0qWf6YpyRygvF3KGZX",
       "https://drive.google.com/uc?export=view&id=1dBUVIyb01asFxhzQnlCQnBtpILG4fRko"
+    ],
+    imagesOffline: [
+      "./assets/MAKECUBE/Ilustracion-final.jpg",
+      "./assets/MAKECUBE/MAKECUBE-1.jpg",
+      "./assets/MAKECUBE/MAKECUBE-2.jpg",
+      "./assets/MAKECUBE/MAKECUBE-3.jpg",
+      "./assets/MAKECUBE/MAKECUBE-4.jpg"
     ],
     description:"MAKECUBE es una empresa ficticia que se realizó como proyecto para analizar los diferentes factores de seguridad y ergonomía para mantener la integridad de trabajadores y clientes. Para la realización de estos análisis se realizó diferentes cálculos de ergonomía y se recreó los entornos de trabajo a partir de los software AutoCAD y SketchUp.",
     toolsUsed: [
@@ -45,10 +59,11 @@ const projects =[
       "Sketch Up"
    ],
     documentation:"https://drive.google.com/file/d/1bfHKZaqej7noppzG57xmqK-HHvXtqWA4/view?usp=sharing",
-    PreviewOnline: "",
+    PreviewOnline: "https://youtu.be/DDdhyHSHIDM",
     RepositoryInGitHub: "",
     downloadProject:""
   },
+
   //Proyecto separador de primeras aguas automatizado
   {
     name:"Separador Automatizado",
@@ -58,12 +73,26 @@ const projects =[
       "programation",
       "electronic"
     ],
-    images: [
+    imagesOnline: [
       "https://drive.google.com/uc?export=view&id=1G2nwhzi0RzZHODW9xV7g_uEP5MaJWe_N",
       "https://drive.google.com/uc?export=view&id=12YkbCzzNpdwMsYRzdYcRTcjJuD3NEIMx",
       "https://drive.google.com/uc?export=view&id=1kHGz3BD8dKpUtlldDy-2dt4mCI1UbMAL",
       "https://drive.google.com/uc?export=view&id=1tBLgEZLxBrJvoj_765dRYcPd3b7r1zZo",
       "https://drive.google.com/uc?export=view&id=1JCIucjbTDaLu4XC6W0__nIAJXqenyjsS"
+    ],
+    imagesOffline: [
+      "./assets/Professional-residences/RD-1.jpg",
+      "./assets/Professional-residences/RD-2.jpg",
+      "./assets/Professional-residences/RD-3.jpg",
+      "./assets/Professional-residences/RD-4.jpg",
+      "./assets/Professional-residences/RD-5.jpg",
+      "./assets/Professional-residences/RD-6.png",
+      "./assets/Professional-residences/RD-7.jpg",
+      "./assets/Professional-residences/RD-8.jpg",
+      "./assets/Professional-residences/RD-9.jpg",
+      "./assets/Professional-residences/RD-10.jpg",
+      "./assets/Professional-residences/RD-11.jpg",
+      "./assets/Professional-residences/RD-12.jpg"
     ],
     description:"El presente proyecto es un separador de primeras aguas automatizado que forma parte de un sistema de captación de agua de lluvia en la Escuela Superior Normal Veracruzana “DR. Manuel Suárez Trujillo”. La automatización del presente separador de aguas consiste en el vaciado automatizado, ya sea para las cañerías o hacia la cisterna dependiendo de las condiciones del agua.",
     toolsUsed: [
@@ -77,6 +106,7 @@ const projects =[
     RepositoryInGitHub: "",
     downloadProject:""
   },
+
   //Proyecto pagina de batacoin platzi
   {
     name:"BatataCoin",
@@ -84,7 +114,7 @@ const projects =[
     categories:[
         "webProgramation"
     ],
-    images: [
+    imagesOnline: [
       "https://drive.google.com/uc?export=view&id=12dPRDs-efarQuFOp8QlhwLictv4C_gD1",
       "https://drive.google.com/uc?export=view&id=1kRtBUgh9xQVdOc7l-cciBY1Au6rUnF3q",
       "https://drive.google.com/uc?export=view&id=1sUVXP0mLql4rG7E5q6UjI13kv6of044U",
@@ -92,6 +122,15 @@ const projects =[
       "https://drive.google.com/uc?export=view&id=1qB9XtDuN_tkgHHzPpw_sJzljZT66cClp",
       "https://drive.google.com/uc?export=view&id=1wqoc3pwwma-i4-80TsjsFU3VCVOSGwwV",
       "https://drive.google.com/uc?export=view&id=1NsG4eOIp0ddlyoF-jOwB7FXCVM0vzGMk"
+    ],
+    imagesOffline: [
+      "./assets/BatataCoin/Portada-de-proyecto.jpg",
+      "./assets/BatataCoin/Batatacoin-1.jpg",
+      "./assets/BatataCoin/Batatacoin-2.jpg",
+      "./assets/BatataCoin/Batatacoin-3.jpg",
+      "./assets/BatataCoin/Batatacoin-4.jpg",
+      "./assets/BatataCoin/Batatacoin-5.jpg",
+      "./assets/BatataCoin/Diploma-Resonsive-Design-Maquetacion-Mobile-First.jpg",
     ],
     description:"El presente proyecto es el resultado de la realización del curso online en la plataforma Platzi. El curso Responsive Mobile.",
     toolsUsed: [
@@ -103,6 +142,7 @@ const projects =[
     RepositoryInGitHub: "https://github.com/Antonio2115/BatataCoin",
     downloadProject:""
   },
+
   //Proyecto de tienda virtual
   {
     name:"YardSale",
@@ -110,7 +150,7 @@ const projects =[
     categories:[
         "webProgramation",
     ],
-    images: [
+    imagesOnline: [
         "https://drive.google.com/uc?export=view&id=1Vvu5pXTKYQaHMFUUoSA7IyYUzB5iPUfj",
         "https://drive.google.com/uc?export=view&id=1-PloMhjPCr-YhSqzfqa86XekZQHgxE3W",
         "https://drive.google.com/uc?export=view&id=1F2SZtT9IcmTezvpqLweVNAKoKWdwQM9q",
@@ -120,6 +160,17 @@ const projects =[
         "https://drive.google.com/uc?export=view&id=1L-Uof0ch0k9gO2M5cAnlAoQX8DNV0S_6",
         "https://drive.google.com/uc?export=view&id=1VcIqbKfHIL3XZD_burMq-uWUOKI79KcM",
         "https://drive.google.com/uc?export=view&id=1ZoSEa81PPGz-0RuLoBQuKa98dW4DZBs5"
+    ],
+    imagesOffline: [
+      "./assets/YardSale/Portada-de-proyecto.jpg",
+      "./assets/YardSale/YardSale-1.jpg",
+      "./assets/YardSale/YardSale-2.jpg",
+      "./assets/YardSale/YardSale-3.jpg",
+      "./assets/YardSale/YardSale-4.jpg",
+      "./assets/YardSale/YardSale-5.jpg",
+      "./assets/YardSale/YardSale-6.jpg",
+      "./assets/YardSale/diploma-frontend-developer.jpg",
+      "./assets/YardSale/diploma-javascript-practico.jpg"
     ],
     description:"El presente proyecto es el resultado de la realización de dos cursos online en la plataforma Platzi. El curso de Frontend Developer y el nuevo curso práctico de JavaScript.",
     toolsUsed: [
@@ -132,6 +183,7 @@ const projects =[
     RepositoryInGitHub: "https://github.com/Antonio2115/Proyecto-de-tienda",
     downloadProject:""
   },
+
   //Diseños en SolidWorks de diferentes proyectos en equipo
   {
     name:"Diseños CAD",
@@ -139,7 +191,7 @@ const projects =[
     categories:[
       "design3D"
     ],
-    images: [
+    imagesOnline: [
     //Brazo robotico
     "https://drive.google.com/uc?export=view&id=1bMlAGtj3LP1S3hk5H2VpnxU86AIh1H7x",
     "https://drive.google.com/uc?export=view&id=1I_FFz91So2fkLfrWi0CPaNk9AuHjnfH7",
@@ -170,6 +222,37 @@ const projects =[
     "https://drive.google.com/uc?export=view&id=1L5FY3WDuKVxQhitaQTSy9cTj96Crb4-A",
     "https://drive.google.com/uc?export=view&id=1J_wGIeUlk8G8BKfbLfDGr-RMrcHigrvc"
     ],
+    imagesOffline: [
+      //Brazo robotico
+      "./assets/CAD/Brazo-de-3-GDL-1.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-2.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-fisico.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-1.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-2.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-3.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-4.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-5.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-6.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-7.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-8.jpg",
+      "./assets/CAD/Brazo-de-3-GDL-medidas-9.jpg",
+      
+      //Seguidor de lineas
+      "./assets/CAD/Seguidor-de-lineas-CAD-chasis.png",
+      "./assets/CAD/Seguidor-de-lineas-fisico.png",
+
+      //Diseño de molinillo
+      "./assets/CAD/Molinillo-de-frente.jpeg",
+      "./assets/CAD/Molinillo-Isometrico.jpeg",
+      "./assets/CAD/Molinillo-medidas-1.jpeg",
+      "./assets/CAD/Molinillo-medidas-2.jpeg",
+      "./assets/CAD/Molinillo-medidas-3.jpeg",
+      "./assets/CAD/Molinillo-medidas-4.jpeg",
+      "./assets/CAD/Molinillo-medidas-5.jpeg",
+      "./assets/CAD/Molinillo-medidas-6.jpeg",
+      "./assets/CAD/Molinillo-medidas-7.jpeg",
+      "./assets/CAD/Molinillo-medidas-9.jpeg",
+    ],
     description:"En la siguiente sección se expondrán diferentes diseños en SolidWorks, algunos de estos llegaron a hacerse de manera física y tendrán junto el resultado de estos mismos y otros diseños no llegaron a realizarse de manera física. Cabe aclarar que TODOS LOS PROYECTOS FUERON REALIZADOS EN EQUIPO. Los proyectos aquí presentados son los siguientes. Seguidor de líneas, Brazo robótico de 3 ejes, Colector de agua en residencias profesionales y Diseño de molino.",
     toolsUsed: [
       "SolidWorks"
@@ -192,8 +275,11 @@ const projects =[
 //      "webProgramation",
 //      "Electronic"
 //   ],
-//   images: [
-//      "https://drive.google.com/uc?export=view&id= ID en Drive"
+//   imagesOnline: [
+//      "https://drive.google.com/uc?export=view&id= ID en Drive",
+//   ],
+//   imagesOffline: [
+//      "./Assents",
 //   ],
 //   description:"",
 //   toolsUsed: [""],
@@ -202,3 +288,9 @@ const projects =[
 //   RepositoryInGitHub: "",
 //   downloadProject:""
 // }
+
+/*
+  <<<<<<<----- Actualización pendientes ----->>>>>>>
+  1.- Fecha de Desarrollo 
+
+*/

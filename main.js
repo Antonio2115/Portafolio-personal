@@ -38,7 +38,7 @@ function renderProjects(project){
 
   projectContainer.addEventListener('click', function(){projectDetail(project);});
 
-  imgProject.setAttribute('src',project.images[0]);
+  imgProject.setAttribute('src',project.imagesOffline[0]);
   projectTitle.innerText = project.name;
   categoryProject.innerText = project.categoryPrimary;
   //Agregacion de cada proyecto
@@ -82,7 +82,7 @@ function projectDetail(project){
   });
 
   //Mapeo de imagenes para la lista
-  project.images.map(image =>{
+  project.imagesOffline.map(image =>{
     let imageCreater = document.createElement('img');
     imageCreater.classList.add('imageOfGallery');
     imageCreater.setAttribute('src',image);
@@ -172,7 +172,7 @@ function projectDetail(project){
       }
     });
     //Limpieza de imagenes de la galeria
-    project.images.map(()=>{
+    project.imagesOffline.map(()=>{
        let imageOfGallery = document.querySelector('.imageOfGallery');
        if(imageOfGallery){
         imageOfGallery.remove();

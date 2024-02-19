@@ -7,7 +7,7 @@
   --soft-black: #131417;
   --soft-transparent-black: #00000081;
   --soft-blue: #2d64fc;
-  --soft-transparent-blue: #2d64fc69;
+  --soft-transparent-blue: #2d64fcb0;
   --soft-gray: #cfcfcf;
   --soft-transparent-gray: #cfcfcf3b ;
   --sm: 1.6rem;
@@ -172,7 +172,7 @@ nav .menu i:hover{
 /*-----------------------Estilos de inicio------------------------------ */
 
 #begin {
-  background: linear-gradient(var(--soft-transparent-blue),var(--transparent)) ,url("https://drive.google.com/uc?export=view&id=10GElfMNg69KyPZx9lGB0GTedsNff2LBu");
+  background: linear-gradient(var(--soft-transparent-blue) 30%,var(--transparent)) ,url("./assets/Logotype/Logo-de-pagina-extendido.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -194,6 +194,7 @@ nav .menu i:hover{
   text-align: center;
   font-size: var(--lg);
   color: var(--white);
+  /* -webkit-text-stroke: .1px black; */
 }
 #begin .begin-container .welcome-text{
   font-size: var(--sm);
