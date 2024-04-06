@@ -1,4 +1,4 @@
-//Funcion de despliegue de navbar mobile
+//<---------------------------------Funcion de despliegue de navbar mobile------------------------->
 let links = document.querySelector('.links');
 let menuNavBackGround = document.querySelector('.menuBackground');
 let projectDetailMenuBackground = document.querySelector('.projectDetailMenuBackground');
@@ -13,7 +13,7 @@ function responsiveMenuMobile(){
 
   menuNavBackGround.classList.toggle('disable');
 }
-//Función para en caso de que redimensiona la pagina se cierra la ventana del navbar
+//Función para en caso de que se redimensione la página se cierra la ventana del navbar
 function closedResponsiveMenuMobile(){
   const IsOpenMenuMobile = links.classList.contains('active');
   if(IsOpenMenuMobile){
@@ -22,10 +22,10 @@ function closedResponsiveMenuMobile(){
   }
   menuNavBackGround.classList.add('disable');
 }
-//<---------------------------------Funciones de ventana de detalles del proyecto-------------------------->
-
 //Cada vez que se redimensiona la página, se cierra la ventana del navbar
 window.onresize = closedResponsiveMenuMobile; 
+
+//<---------------------------------Funciones sección de portafolio------------------------->
 
 //Renderizado de proyectos en la sección de proyectos
 function renderProjects(project){
@@ -82,7 +82,8 @@ function projectDetail(project){
   });
 
   //Mapeo de imagenes para la lista
-  project.imagesOffline.map(image =>{
+  let currentIndex = 0;
+  project.imagesOffline.map((image,index) =>{
     let imageCreater = document.createElement('img');
     imageCreater.classList.add('imageOfGallery');
     imageCreater.setAttribute('src',image);
@@ -95,10 +96,51 @@ function projectDetail(project){
       const zoomImage = document.getElementById('zoomed-image');
       zoomOverlay.style.display = 'flex';
       zoomImage.setAttribute('src', imageCreater.src);
+      currentIndex = index;
+      console.log(currentIndex);
     });
   });
 
- 
+  //Carrucel de imagenes funciones
+  const rightButtonOfCarousel = document.querySelector(".positionRight");
+  const leftButtonOfCarousel = document.querySelector(".positionLeft");
+
+  function showImage() {
+    const zoomImage = document.getElementById('zoomed-image');
+    zoomImage.setAttribute('src', project.imagesOffline[currentIndex]);
+  }
+
+  // Función para avanzar al siguiente índice
+  function rightImage() {
+    // console.log("Index: " + currentIndex);
+    // console.log("length: " + project.imagesOffline.length);
+    // console.log("(" + currentIndex + " + 1) % "+ project.imagesOffline.length);
+    currentIndex = (currentIndex + 1) % project.imagesOffline.length;
+    showImage();
+  }
+
+  // Función para retroceder al índice anterior
+  function leftImage() {
+    // console.log("Index: " + currentIndex);
+    // console.log("length: " + project.imagesOffline.length);
+    // console.log("(" + currentIndex + " - 1 + "+ project.imagesOffline.length +  ") % " + project.imagesOffline.length);
+    currentIndex = (currentIndex - 1 + project.imagesOffline.length) % project.imagesOffline.length;
+    showImage();
+  }
+    
+  // Agrega un evento de escucha para el botón de siguiente
+  rightButtonOfCarousel.addEventListener("click", (event) => {
+    event.stopPropagation();
+    rightImage();
+  });
+
+  // Agrega un evento de escucha para el botón de anterior
+  leftButtonOfCarousel.addEventListener("click", (event) => {
+    event.stopPropagation();
+    //console.log("Linea 74: " + currentIndex);
+    leftImage();
+  });
+  
 
 
   //<---------------------------------Vadilacion de botones del proyecto------------------------------>
@@ -203,8 +245,10 @@ function zoomInTheImage(image) {
     const zoomImage = document.getElementById('zoomed-image');
     zoomOverlay.style.display = 'flex';
     zoomImage.setAttribute('src', image.src);
+    
   });
 }
+
 
 // Agrega un evento de escucha para ocultar el overlay al hacer clic en él
 const zoomOverlay = document.getElementById('zoom-overlay');

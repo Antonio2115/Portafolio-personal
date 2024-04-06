@@ -22,12 +22,18 @@
       <div class="menu" onclick="responsiveMenuMobile()">
           <i class="fa-solid fa-bars"></i>
       </div>
-
+      
+      <!-- Navegación en la pagina -->
       <ul class="links disable">
         <li><a href="#begin" onclick="closedResponsiveMenuMobile()">INICIO</a></li>
         <li><a href="#aboutMe" onclick="closedResponsiveMenuMobile()">SOBRE MI</a></li>
         <li><a href="#portfolioOfJob" onclick="closedResponsiveMenuMobile()">PROYECTOS</a></li>
       </ul>
+      
+      <!-- Estado actual de empleo -->
+      <div class="statusJobContainer">
+        <p class="statusActiveInText">Buscando Empleo</p>
+      </div>
       
       <div class="social-media">
         <!-- Icono de redes -->
@@ -65,7 +71,9 @@
           <p class="sectionSubtitle">Imágenes del proyecto: </p>
           <div id="GalleryProjectContainer"></div>
           <div id="zoom-overlay">
+            <a class="nextItemButton positionLeft"><</a>
             <img id="zoomed-image">
+            <a class="nextItemButton positionRight">></a>
           </div>
         </div>
       </div>
@@ -95,7 +103,7 @@
         </p>
       </div>
       <div class="primaryButtonContainer">
-        <a href="https://drive.google.com/file/d/1253cQKF00MllKLBhWNHbWSH0txWKCKbL/view?usp=sharing" class="primaryButton">Descargar CV</a>
+        <a href="https://drive.google.com/file/d/1S8APdcHirN9xouYklJxMATIjZ4yIthlm/view?usp=sharing" class="primaryButton">Descargar CV</a>
       </div>
     </div>
   </section>
@@ -118,7 +126,7 @@
   <!-------------------------------------footer----------------------------------------->
   <footer id="pageDetails">
     <p id="updateDate" class="description">Fecha de creacion: 1 de Diciembre del 2022</p>
-    <p class="description">Fecha de actualizacion: 18 de Febrero del 2024</p>
+    <p class="description">Fecha de actualizacion: 06 de Abril del 2024</p>
     <p id="email" class="description">Email: joseantoniova159@gmail.com</p>
   </footer>
 
@@ -136,7 +144,7 @@
       </div>
   </template>
 
-  <script src="./projects.js"></script>
-  <script src="./main.js"></script>
+  <script src="scripts/projects.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
