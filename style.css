@@ -246,7 +246,7 @@ nav .menu i:hover{
   border-radius: 5px;
   padding: 0px 5px;
   font-size: var(--sm);
-  text-align: justify;
+  text-align: center;
   font-weight: 200;
   line-height: 28px;
   height: auto;
@@ -541,7 +541,7 @@ nav .menu i:hover{
 /*------------------------------media query-------------------------------------- */
 
 
-@media (max-width: 575px){
+@media (max-width: 605px){
 /*------------------------------Estilos responsive Navbar-------------------------------------- */
   .navContanier .links{
     position: absolute;
